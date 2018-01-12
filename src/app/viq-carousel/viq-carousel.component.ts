@@ -13,6 +13,7 @@ export class ViqCarouselComponent implements OnInit {
   public data: any[];
   private leftOvers: any[] = [];
   private defaultItems = 6;
+  selectedItemId = 0;
 
   @Output()
   public onSelect = new EventEmitter<any>();
@@ -40,6 +41,7 @@ export class ViqCarouselComponent implements OnInit {
   }
 
   selectCarouselItem(item: any) {
+    this.selectedItemId = item.id;
     this.onSelect.emit(item);
   }
 
