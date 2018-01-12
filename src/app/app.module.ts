@@ -2,15 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ViqCarouselComponent } from './viq-carousel/viq-carousel.component';
+import { ViqCarouselService } from './viq-carousel/viq-carousel.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViqCarouselComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ViqCarouselService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

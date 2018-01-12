@@ -1,0 +1,59 @@
+.carousel_nav_icon{
+    width: 2vw;
+    height: 15vh;
+    color: #aaa;
+    vertical-align: 5px;
+    margin-left: 1vw;
+    cursor: pointer;
+}
+
+.viq-carousel{
+    height: 10%;
+    width: 80vw;
+    white-space: nowrap;
+}
+
+.carousel_label{
+    color: #AEAFAF;
+    font-family: sans-serif;
+    vertical-align: super;
+}
+.carousel_item{
+    display: inline-block;
+    background-color: #ffb559;
+    color: #fff;
+    border: 1px solid #FFC57D;
+    padding: 3px 10px;
+    margin-right: 1em;
+    margin-top: 0.3em;
+    border-radius: 5px;
+    max-width: 15vw;
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: .9em;
+    font-weight: 600;    
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.hide-carousel{
+    display: none;
+}
+
+.carousel_tooltip::after{
+    content: attr(title);
+    display: none;
+}
+.carousel_item:hover .carousel_tooltip::after{
+    display: block;
+    background: #ffffff;
+    border: 1px solid #AEAFAF;
+    color: #AEAFAF;
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin: 5px 0 0 10px;
+    position: fixed;
+    height: 10vh;
+    width: auto;
+}

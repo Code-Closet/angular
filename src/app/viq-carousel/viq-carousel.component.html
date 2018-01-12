@@ -1,0 +1,12 @@
+<div class="viq-carousel">
+  <span class="carousel_label">View by : </span>
+  <div class="glyphicon glyphicon-chevron-left carousel_nav_icon left_spacer"
+  (click)="scrollLeft($event)"></div>
+  <div *ngFor = 'let item of data' class = "carousel_item" 
+    [class.hide-carousel] = "!item.isActive"  (click)="selectCarouselItem(item)">
+    <span class="fa fa-television"></span>
+    <span class="carousel_tooltip" [title]="item.name">{{item.name}}</span>
+  </div>
+  <div class="glyphicon glyphicon-chevron-right carousel_nav_icon" 
+  (click)="scrollRight($event)"></div>
+</div>
