@@ -4,10 +4,13 @@
   (click)="scrollLeft($event)"></div>
   <div *ngFor = 'let item of data' class = "carousel_item" 
     [class.selected-carousel] = "item.id === selectedItemId"
-    [class.hide-carousel] = "!item.isActive"  (click)="selectCarouselItem(item)">
+    [class.hide-carousel] = "!item.isActive" 
+    [class.no-data-carousel] = "data.length === 0" 
+    (click)="selectCarouselItem(item)">
     <span class="fa fa-television"></span>
     <span class="carousel_tooltip" [title]="item.name">{{item.name}}</span>
   </div>
+  <span [class.no-data-carousel] = "data.length > 0" class="empty-carousel">No Data</span>
   <div class="glyphicon glyphicon-chevron-right carousel_nav_icon" 
   (click)="scrollRight($event)"></div>
 </div>

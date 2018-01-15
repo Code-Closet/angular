@@ -62,3 +62,18 @@
     background-color: #ffffff;
     color: #ffb559;
 }
+
+.empty-carousel {
+    display: inline;
+    color: #AEAFAF;
+    font-family: sans-serif;
+    font-size: .9em;
+    font-weight: 600;
+    text-transform: uppercase;    
+    vertical-align: super;
+    margin: 5em;
+}
+
+.no-data-carousel {
+    display: none;
+}
