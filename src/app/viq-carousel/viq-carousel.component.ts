@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { ViqCarouselService } from './viq-carousel.service';
 import { Server } from 'selenium-webdriver/safari';
@@ -10,7 +11,7 @@ import { Server } from 'selenium-webdriver/safari';
 })
 export class ViqCarouselComponent implements OnInit {
 
-  public data: any[];
+  public data: any[] = [];
   private leftOvers: any[] = [];
   private defaultItems = 6;
   selectedItemId = 0;
@@ -20,8 +21,10 @@ export class ViqCarouselComponent implements OnInit {
   constructor(private service: ViqCarouselService) { }
 
   ngOnInit() {
-    this.data = this.service.getCarouselData();
-    this.activateItems();
+    this.service.getCarouselData().subscribe(data => {
+      this.data = data;
+      this.activateItems();
+    });
   }
 
   scrollLeft(event: MouseEvent) {
